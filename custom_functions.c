@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 
-/
+/*
  * _putchar - writes the character c to stdout
  * @c: The character to print
  *
@@ -13,12 +13,14 @@ int _putchar(char c)
 {
   return (write(1, &c, 1));
 }
-/
+
+/*
  *_strlen - reset number
  *Description: This function return a length for some string
  *@s: pointer char
  *Return: int length
  */
+
 int _strlen(char *s)
 {
   int len = 0;
@@ -29,7 +31,7 @@ int _strlen(char *s)
   }
   return (len);
 }
-/
+/*
  *_puts - print string
  *Description: print some string
  *@str: pointer char
@@ -44,7 +46,7 @@ void _puts(char *str)
     _putchar(str[i]);
   }
 }
-/
+/*
  *convert_to - convert numbers
  *Description: This function convert numbers to other formats
  *decimal, octal, hexadecimal, binary etc..

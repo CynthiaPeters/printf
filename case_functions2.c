@@ -1,7 +1,8 @@
 #include "main.h"
 #include <stdarg.h>
 
-/
+/*
+ *
  * print_ptr - print_base16_upper_lower
  * @arg: va_list parameter
  * Description: This function print address pointer
@@ -52,11 +53,12 @@ int print_ptr(va_list arg)
   return (i);
 }
 
-/
+/**
  * print_rot13 - prints a string using rot13
  * @arg: list of arguments from _printf
  * Return: length of the printed string
  */
+
 int print_rot13(va_list arg)
 {
   register short i, j;
@@ -71,8 +73,8 @@ int print_rot13(va_list arg)
 
   for (j = 0; s[j]; j++)
   {
-    if (s[j] < 'A'  (s[j] > 'Z' && s[j] < 'a')  s[j] > 'z')
-      _putchar(s[j]);
+    if (s[j] < 'A' || (s[j] > 'Z' && s[j] < 'a') || s[j] > 'z')
+			_putchar(s[j]);
     else
     {
       for (i = 0; i <= 52; i++)

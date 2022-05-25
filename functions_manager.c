@@ -1,6 +1,8 @@
 #include "main.h"
 #include <stdarg.h>
-/
+#include <stdlib.h>
+
+/*
  *function_manager - function manager
  *@c: character to find
  *@arg: va_list type
@@ -17,7 +19,7 @@ int function_manager(char c, va_list arg)
     cont = print_ptr(arg);
   return (cont);
 }
-/
+/*
  *_switch - switch
  *@c: character to find
  *@arg: va_list type

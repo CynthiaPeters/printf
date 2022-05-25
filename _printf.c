@@ -1,7 +1,8 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-/
+
+/*
  *_printf - printf
  *@format: const char pointer
  *Description: this functions implement some functions of printf
@@ -24,7 +25,7 @@ int _printf(const char *format, ...)
   va_end(arg);
   return (cont);
 }
-/
+/*
  *loop_format - loop format
  *@arg: va_list arg
  *@string: pointer from format
@@ -74,7 +75,7 @@ int loop_format(va_list arg, const char *string)
   }
   return (cont);
 }
-/
+/*
  * check_percent - call function manager
  *@flag: value by reference
  *@aux: character
@@ -96,7 +97,7 @@ int check_percent(int *flag, char cent)
   return (cont);
 }
 
-/
+/*
  * call_function_manager - call function manager
  *@aux: character parameter
  *@arg: va_list arg
