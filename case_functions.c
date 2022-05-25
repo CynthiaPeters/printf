@@ -61,12 +61,14 @@ int print_unsign(va_list arg, int base)
   return (cont);
 
 }
+
 /*
  * print_string - print string
  * @arg: va_list parameter
  * Description: print string
  * Return: num of characters
  **/
+
 int print_string(va_list arg)
 {
   char *s;
@@ -84,6 +86,63 @@ int print_string(va_list arg)
   cont = _strlen(s);
   return (cont);
 }
+
+/**
+ * print_STR - prints a string with a `S` (upper case) specificer
+ * @arg: argument
+ * Return: number of character printed
+ */
+
+int print_STR(va_list arg)
+{
+int i;
+char *str = va_arg(arg, char*);
+
+if (str == NULL)
+	str = "(null)";
+else if (*str == '\0')
+	return (-1);
+
+for (i = 0; str[i]; i++)
+{
+	if ((str[i] < 32 && str[i] > 0) || str[i] >= 127)
+	{
+		_putchar('\\');
+		_putchar('x');
+		if (i < 16)
+			_putchar('0');
+
+		print_unsignedIntToHex(str[i], 'A');
+	}
+	else
+		_putchar(str[i]);
+}
+
+return (i);
+}
+
+/**
+ * print_hex - prints a hexadecimal in lower case
+ * @arg: list that contains hexadecimal to print
+ * Return: number of digits printed
+ */
+
+int print_hex(va_list arg)
+{
+	return (print_base16_upper_lower (arg, 'a'));
+}
+
+/**
+ * print_HEX - prints a hexadecimal in upper case
+ * @arg: list that contains hexadecimal to print
+ * Return: number of digits printed
+ */
+
+int print_HEX(va_list arg)
+{
+	return (print_base16_upper_lower(arg, 'A'));
+}
+
 /**
  * print_base16_upper_lower - print_base16_upper_lower
  * @arg: va_list parameter
